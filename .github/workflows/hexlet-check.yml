@@ -5,10 +5,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - name: npm install
-        uses: hexlet/project-action@release
-      - run: npm install -g bats
-      - run: bats -v
-      - run: make lint
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: make install
+    - run: make lint
+      env:
+        CI: true
+  
