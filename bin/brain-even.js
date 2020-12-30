@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import even from '../src/ev.js';
+import flow from '../src/index.js';
+import { even, condition } from '../games/even.js';
 
-even();
+flow(condition, even);
