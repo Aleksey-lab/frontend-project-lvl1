@@ -4,3 +4,4 @@
 ![example workflow name](https://github.com/Aleksey-lab/frontend-project-lvl1/workflows/hexlet-check/badge.svg)
 https://asciinema.org/a/1qcQmcDXjPDIppjlNolcP1q2a
 https://asciinema.org/a/eC0dY1xkeD39MacPFAamafQUq
+https://asciinema.org/a/1bfMcWUoFJeIbwxofCucZGNFp
