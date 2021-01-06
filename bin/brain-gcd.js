@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import flow from '../src/index.js';
-import { nod, condition } from '../games/nod.js';
+import { description, getQuestionAndAnswer } from '../src/games/nod.js';
 
-flow(condition, nod);
+flow(description, getQuestionAndAnswer);

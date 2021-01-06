@@ -1,17 +1,23 @@
-import { car, cdr } from '@hexlet/pairs';
-import greeting from './greeting.js';
+import readlineSync from 'readline-sync';
 
+const quesionsCount = 3;
 // eslint-disable-next-line consistent-return
-export default (condition, game) => {
-  const name = greeting();
-  condition();
-  for (let i = 0; i < 3; i += 1) {
-    const tmp = game();
-    if (tmp === true) {
+export default (description, getQuestionAndAnswer) => {
+  console.log('Welcome to the Brain Games!\n');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!\n`);
+  console.log(description);
+
+  for (let i = 0; i < quesionsCount; i += 1) {
+    const [question, correctAnswer] = getQuestionAndAnswer();
+    console.log(`Question: ${question}`);
+    const answer = readlineSync.question('Your answer: ');
+
+    if (String(correctAnswer) === answer) {
       console.log('Correct!');
     } else {
-      return console.log(`'${car(tmp)}' is wrong answer ;(. Correct answer was '${cdr(tmp)}'.\nLet's try again, ${name}!`);
+      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
     }
   }
-  console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
